@@ -1,0 +1,11 @@
+# Dev scripts
+screenshot.py
+shot_wa.py
+
+# Internal docs
+Claude-Webbsite.md
+Claude.md
+
+# OS
+.DS_Store
+Thumbs.db
