@@ -3099,6 +3099,9 @@
       padding: 40px 36px 36px;
       width: 100%;
       max-width: 560px;
+      max-height: calc(100dvh - 40px);
+      overflow-y: auto;
+      -webkit-overflow-scrolling: touch;
       position: relative;
       box-shadow: 0 24px 80px rgba(0,0,0,0.6), 0 0 0 1px rgba(255,255,255,0.04);
       transform: translateY(24px) scale(0.97);
@@ -3481,6 +3484,49 @@
 
       /* Very small screens: booking options stay 1 col */
       .booking-options { grid-template-columns: 1fr; }
+    }
+
+    /* ============================================================
+       30. MODAL — MOBILE OPTIMISATION
+       ============================================================ */
+    @media (max-width: 640px) {
+      /* Anchor modal to top of screen so tall content is reachable */
+      .modal-overlay {
+        align-items: flex-start;
+        padding: 16px;
+        padding-top: max(16px, env(safe-area-inset-top, 16px));
+      }
+
+      /* Tighter box padding, full remaining viewport height */
+      .modal-box {
+        padding: 28px 20px 24px;
+        border-radius: var(--radius-lg);
+        max-height: calc(100dvh - 32px);
+        /* Keep close button reachable by giving it space */
+      }
+
+      /* About modal — same constraints */
+      .modal-about .modal-box {
+        max-height: calc(100dvh - 32px);
+      }
+
+      /* Heading slightly smaller */
+      .modal-heading { font-size: 1.15rem; }
+
+      /* About body text tighter */
+      .about-body { gap: 14px; }
+      .about-body p { font-size: 0.875rem; line-height: 1.65; }
+
+      /* Value chips single column on narrow screens */
+      .about-values { grid-template-columns: 1fr; gap: 8px; }
+
+      /* CTA row stacks vertically */
+      .about-cta-row {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 12px;
+      }
+      .about-cta-row .btn { width: 100%; justify-content: center; }
     }
   </style>
 </head>
