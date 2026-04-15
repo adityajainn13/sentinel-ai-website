@@ -1528,6 +1528,9 @@
     .dashboard-left .dashboard-cta-bar { margin-top: 0; }
     .dashboard-left .db-crosssell { margin-top: 0; }
 
+    /* Mobile-only demo button — hidden by default, shown via mobile media query */
+    .dashboard-mobile-demo-btn { display: none; }
+
     /* Right column: centered within the layout row */
     .dashboard-right {
       display: flex;
@@ -3416,6 +3419,24 @@
 
       /* Pricing card padding */
       .pricing-card { padding: 40px 28px; }
+
+      /* Hide browser frame on mobile — replaced by the mobile demo button */
+      .dashboard-right { display: none; }
+
+      /* Show mobile-only demo button */
+      .dashboard-mobile-demo-btn {
+        display: flex !important;
+        width: 100%;
+        justify-content: center;
+        padding: 16px 28px;
+        font-size: 1rem;
+        border-radius: 14px;
+      }
+    }
+
+    /* Desktop: hide the mobile-only button */
+    @media (min-width: 1024px) {
+      .dashboard-mobile-demo-btn { display: none !important; }
     }
 
     @media (max-width: 767px) {
@@ -3957,6 +3978,13 @@
                 <span class="aria-bot-tooltip" aria-hidden="true">Ask Aria: "Analyse my business data"</span>
               </div>
             </div>
+
+            <!-- Mobile-only: prominent demo button replaces the browser frame -->
+            <a href="https://ai-data-dashboard-delta.vercel.app/" target="_blank" rel="noopener noreferrer" class="demo-shine-btn dashboard-mobile-demo-btn" aria-label="Open the full live AI Data Dashboard demo">
+              <span class="demo-shine-btn__shine" aria-hidden="true"></span>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+              Try the Live Demo →
+            </a>
 
           </div><!-- /dashboard-left -->
 
