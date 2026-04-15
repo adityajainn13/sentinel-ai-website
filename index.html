@@ -2,7 +2,7 @@
 <html lang="en" data-theme="dark">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <title>Sellvio.ai — AI Automations for Small & Medium Businesses</title>
   <meta name="description" content="WhatsApp bots, AI dashboards, and sales outreach automation — built for SMBs. Book a free discovery call.">
   <meta property="og:title" content="Sellvio.ai — AI Automations for SMBs">
@@ -77,6 +77,8 @@
     html {
       scroll-behavior: smooth;
       font-size: 16px;
+      overflow-x: hidden;
+      max-width: 100%;
     }
 
     body {
@@ -1119,7 +1121,7 @@
     .dash-pill strong { color: var(--accent); font-weight: 700; }
 
     /* Browser chrome */
-    .browser-showcase { position: relative; }
+    .browser-showcase { position: relative; overflow: hidden; }
 
     .browser-glow {
       position: absolute;
@@ -2514,13 +2516,14 @@
       justify-content: center;
       align-items: center;
       padding: 40px 32px;
+      overflow: hidden;
     }
 
     /* Ambient glow — two layers for depth */
     .phone-bg-glow {
       position: absolute;
-      width: 560px;
-      height: 560px;
+      width: min(560px, 100%);
+      height: min(560px, 100%);
       border-radius: 50%;
       background: radial-gradient(circle,
         rgba(129, 140, 248, 0.32) 0%,
@@ -2552,7 +2555,7 @@
     .phone-frame {
       position: relative;
       z-index: 1;
-      width: 320px;
+      width: min(320px, calc(100vw - 64px));
       border-radius: 48px;
       background: linear-gradient(160deg, #16163a 0%, #080816 55%);
       border: 1.5px solid rgba(129, 140, 248, 0.42);
