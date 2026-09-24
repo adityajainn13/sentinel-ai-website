@@ -10,7 +10,12 @@
   <meta property="og:image" content="./assets/og-image.png"><!-- OG-IMAGE: Replace with your custom 1200x630 Open Graph image -->
   <meta property="og:type" content="website">
   <meta name="twitter:card" content="summary_large_image">
-  <link rel="icon" type="image/svg+xml" href="./assets/favicon.svg">
+  <link rel="icon" type="image/png" sizes="512x512" href="./assets/favicon-512.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="./assets/favicon-192.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="64x64" href="./assets/favicon-64.png">
+  <link rel="shortcut icon" href="./assets/favicon.ico">
+  <link rel="apple-touch-icon" href="./assets/favicon-192.png">
 
   <!-- Google Fonts: Poppins -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -322,6 +327,15 @@
     }
     .nav-logo:hover { opacity: 0.85; }
 
+    .logo-mark-img {
+      align-self: center;
+      margin-right: 6px;
+      width: 22px;
+      height: auto;
+      display: block;
+      flex-shrink: 0;
+    }
+
     .logo-brand {
       background: linear-gradient(135deg, #ffffff 0%, #c7d2fe 60%, #818CF8 100%);
       -webkit-background-clip: text;
@@ -340,26 +354,6 @@
       opacity: 0.9;
       position: relative;
       top: 0.05em;
-    }
-
-    /* Pulsing dot inside .ai */
-    .logo-dot {
-      display: inline-block;
-      width: 5px;
-      height: 5px;
-      border-radius: 50%;
-      background: var(--accent);
-      box-shadow: 0 0 8px rgba(129,140,248,0.9);
-      margin-right: 1px;
-      position: relative;
-      top: -3px;
-      animation: logoDotPulse 2.4s ease-in-out infinite;
-      flex-shrink: 0;
-    }
-
-    @keyframes logoDotPulse {
-      0%, 100% { transform: scale(1);   box-shadow: 0 0 6px rgba(129,140,248,0.8); }
-      50%       { transform: scale(1.4); box-shadow: 0 0 14px rgba(129,140,248,0.5); }
     }
 
     [data-theme="light"] .logo-brand {
@@ -3543,7 +3537,8 @@
       <div class="container nav-inner">
 
         <a href="#hero" class="nav-logo" aria-label="Sellvio.ai home">
-          <span class="logo-brand">Sellvio</span><span class="logo-tld"><span class="logo-dot" aria-hidden="true"></span>ai</span>
+          <img src="./assets/logo-mark.png" alt="" class="logo-mark-img" width="28" height="32" aria-hidden="true">
+          <span class="logo-brand">Sellvio</span><span class="logo-tld">ai</span>
         </a>
 
         <ul class="nav-links" role="list">
@@ -4393,7 +4388,8 @@
       <div class="footer-top">
         <div>
           <a href="#hero" class="footer-logo" aria-label="Sellvio.ai home">
-            <span class="logo-brand">Sellvio</span><span class="logo-tld"><span class="logo-dot" aria-hidden="true"></span>ai</span>
+            <img src="./assets/logo-mark.png" alt="" class="logo-mark-img" width="28" height="32" aria-hidden="true">
+            <span class="logo-brand">Sellvio</span><span class="logo-tld">ai</span>
           </a>
           <p class="footer-tagline" style="margin-top:12px;">
             AI automations built for small and medium businesses. Practical. Affordable. Yours.
